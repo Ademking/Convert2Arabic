@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="https://kouki.website/vendor/koukicons/koukicons.min.css" rel="stylesheet">
+    <script src="jquery.min.js"></script>
+    <style>
+        .bg {
+            background-color: darkred;
+        }
+        #p1 {
+            font-family: 'Cairo', sans-serif;
+        }
+        textarea {
+            font-family: 'Cairo', sans-serif;
+            border-radius: 0px !important;
+            font-size: 20px !important;
+            border: Solid #2929294f 1px !important ;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center">Convert2Arabic&nbsp;&nbsp;<i class="kk kk-pencil2"></i></h1>
+                        <h3 class="text-center">"Franco-Arabic" To Arabic Converter (Using RegEx)</h3>
+                        <p class="text-center">You Can convert any text from Latin to Arabic characters so that you can read it with ease </p>
+                        <p id="p1" class="text-center" style="direction: rtl">تنجم تبدل أي نص مكتوب بطريقة الـ SMS و Facebook الى العربية</p>
+                        <br>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <textarea name="textarea" class="form-control" id="text" cols="5" rows="10"></textarea>
+                    <br>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <textarea style="direction: rtl; cursor:text;" name="textarea2" class="form-control" id="text2" cols="5" rows="10" disabled></textarea>
+                    <br>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6" style="display:flex !important;">
+                    <br>
+                    <button class="btn center-block" id="clear"><i class="kk kk-empty_trash"></i> Clear   </button>
+                   <p>OR</p> 
+                    <button class="btn center-block" id="submit"><i class="kk kk-next"></i> Convert   </button>
+                    <br>
+                </div>
+                <div class="col-md-6">
+                    <br>
+                    <p class="text-center">Made With <i class="kk kk-heart"></i> & <i class="kk kk-cookie"></i> By Adem Kouki </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="converter.js"></script>
+    <script>
+        $("#submit").click(function () {
+            var text = $("#text").val();
+            var result = convert2Arabic(text);
+            $("#text2").val(result);
+            console.log("clicked");
+        });
+
+        $("#clear").click(function () {
+            $("#text").val('');
+            $("#text2").val('');
+        })
+
+    </script>
+
+
+
+
+</body>
+
+</html>
